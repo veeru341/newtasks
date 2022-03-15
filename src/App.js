@@ -41,7 +41,7 @@ export default function Todo() {
             name="task"
             type="text"
             value={task}
-            placeholder="Write your task..."
+            placeholder="Write your task...."
             className="input-form"
             onChange={(e) => setTask(e.target.value)}
           />
