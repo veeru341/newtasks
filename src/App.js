@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Button from '@material-ui/core/Button';
+import "./App.css"
 
-function App() {
+export default function App(props) {
+  const [isShowing, setIsShowing] = useState(true);
+
+  const handleClick = () => {
+      setIsShowing(!isShowing)
+  }
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <center>
+        <h2>Hi this is react</h2>
+          <Button onClick={handleClick} variant="contained" color="primary">Primary</Button><br />
+          {isShowing ? 
+          <img className="image" src="https://images.pexels.com/photos/381739/pexels-photo-381739.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" /> : null}
+      </center>
     </div>
-  );
+  )
 }
-
-export default App;
